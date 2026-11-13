@@ -1,0 +1,47 @@
+{
+  "source_repository": "https://huggingface.co/adamkarvonen/chess_llms",
+  "source_revision": "7d20ccc022c9f46698a1e7370ccf2c1a6392f6dd",
+  "source_license_declaration": "mit",
+  "source_license_evidence": "public/licenses/chess-llms-MODEL_CARD.md",
+  "base_checkpoints": [
+    {
+      "file": "stockfish_16layers_ckpt_no_optimizer.pt",
+      "bytes": 203603762,
+      "sha256": "8ee9614160f6542ad38c30e61577409a80445197abd029e034797bfd3c4b6a76"
+    },
+    {
+      "file": "lichess_16layers_ckpt_no_optimizer.pt",
+      "bytes": 203603554,
+      "sha256": "6997273be54da26e8f757436e2a65262f200d714407ed1ab7290a69e67b3a8b3"
+    }
+  ],
+  "assets": {
+    "vocab": {
+      "file": "vocab.9c1e124ed591d08a.json",
+      "bytes": 640,
+      "sha256": "9c1e124ed591d08a98f850c5dfd9ce3d07d11cf111ee489e3c6409b336a307fd"
+    },
+    "stockfish": {
+      "file": "stockfish16_int8.467a9dd19e03ed7e.onnx",
+      "bytes": 51415168,
+      "sha256": "467a9dd19e03ed7e91a2ebfb399fa88226109cd9bffe43b6ca9182cf9dc7c3b7"
+    },
+    "lichess": {
+      "file": "lichess16_int8.2e51fb57d9c5273f.onnx",
+      "bytes": 51415169,
+      "sha256": "2e51fb57d9c5273f54453d09f1f2a09dd14270c5fc46355eda6d6f1401feb52e"
+    },
+    "stockfishKv": {
+      "file": "stockfish16_kv_int8.492684b87cb39463.onnx",
+      "bytes": 51454111,
+      "sha256": "492684b87cb39463e94dcb67820d9cff3b581bc4d1207a3b137cda44f6fa35e7"
+    },
+    "lichessKv": {
+      "file": "lichess16_kv_int8.b535d10e3c3ede64.onnx",
+      "bytes": 51454112,
+      "sha256": "b535d10e3c3ede644deaec5b15c2c040e4e06ff5e835f9b5710b12340a75dfff"
+    }
+  },
+  "hosting": "Same-origin public/models files included in the source snapshot; no external model service or API key.",
+  "conversion": "Custom int8 ONNX stateless and optional KV exports. The source checkpoint files match upstream LFS hashes. Exact conversion reproducibility has not been independently rebuilt."
+}

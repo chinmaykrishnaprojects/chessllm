@@ -1,0 +1,4 @@
+# Preserve reviewed asset and source bytes on every checkout.
+* -text
+public/licenses/** -whitespace
+public/stockfish/** -whitespace

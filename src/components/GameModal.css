@@ -1,0 +1,143 @@
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal-content {
+    background-color: var(--panel-bg, #1e222a);
+    border: 1px solid var(--border-color, #3a3f4b);
+    padding: 28px 32px;
+    border-radius: 10px;
+    max-width: 480px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+.modal-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary, #dcdcdc);
+    margin: 0 0 6px 0;
+}
+
+.modal-subtitle {
+    color: var(--text-secondary, #969696);
+    margin: 0 0 24px 0;
+    font-size: 0.9rem;
+}
+
+.color-options {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+}
+
+.color-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    padding: 18px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.color-card:hover {
+    border-color: var(--accent-color, #4caf50);
+    background-color: rgba(76, 175, 80, 0.08);
+    transform: translateY(-2px);
+}
+
+.color-card.random:hover {
+    border-color: #64b5f6;
+    background-color: rgba(100, 181, 246, 0.08);
+}
+
+.color-icon {
+    font-size: 2.8rem;
+}
+
+.color-icon-svg {
+    width: 56px;
+    height: 56px;
+}
+
+.color-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary, #dcdcdc);
+}
+
+.color-desc {
+    font-size: 0.7rem;
+    color: var(--text-secondary, #969696);
+}
+
+/* Game over modal */
+.game-over-modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.game-over-modal .modal-content {
+    padding: 36px 44px;
+}
+
+.game-over-modal .result {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color, #4caf50);
+    margin: 12px 0 24px 0;
+}
+
+.game-over-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.game-over-buttons .btn {
+    width: 180px;
+    padding: 10px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color, #3a3f4b);
+    border-radius: 6px;
+    color: var(--text-primary, #dcdcdc);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.game-over-buttons .btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-secondary, #969696);
+}
+
+.game-over-buttons .btn.btn-primary {
+    background: var(--accent-color, #4caf50);
+    border-color: var(--accent-color, #4caf50);
+    color: #000;
+    font-weight: 600;
+}
+
+.game-over-buttons .btn.btn-primary:hover {
+    background: var(--accent-hover, #45a049);
+}

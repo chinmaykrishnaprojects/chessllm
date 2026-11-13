@@ -1,0 +1,34 @@
+.material-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 8px;
+    height: 24px;
+}
+
+.captured-icons {
+    display: flex;
+    gap: 0px;
+}
+
+.piece-icon {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    line-height: 1;
+    transition: opacity 0.2s;
+}
+
+.piece-icon:hover {
+    opacity: 1;
+}
+
+.diff-badge {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-color, #4caf50);
+    background: rgba(76, 175, 80, 0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 4px;
+    box-shadow: 0 0 0 1px rgba(76, 175, 80, 0.2);
+}

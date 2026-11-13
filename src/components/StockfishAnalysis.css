@@ -1,0 +1,57 @@
+.stockfish-analysis {
+  padding: 16px;
+  border-top: 1px solid var(--border-color, #3a3f4b);
+  color: var(--text-primary, #dcdcdc);
+  font-size: 12px;
+  min-width: 0;
+}
+.sf-analysis-heading, .sf-graph-heading, .sf-analysis-controls, .sf-game-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.sf-analysis-heading, .sf-graph-heading { justify-content: space-between; }
+.stockfish-analysis h3, .stockfish-analysis h4 { margin: 0; font-size: 14px; }
+.sf-local-badge { font-size: 10px; color: #a9d2ad; border: 1px solid #44624a; padding: 2px 6px; border-radius: 4px; }
+.sf-explanation, .sf-graph-caption, .sf-analysis-footer { color: var(--text-secondary, #a9adb5); line-height: 1.5; }
+.sf-analysis-controls { margin: 14px 0; }
+.sf-analysis-controls label { display: flex; align-items: center; gap: 6px; }
+.sf-analysis-controls select, .stockfish-analysis button {
+  border: 1px solid var(--border-color, #4b5260);
+  background: var(--bg-secondary, #292e38);
+  color: var(--text-primary, #e1e5eb);
+  font: inherit;
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+.stockfish-analysis button:disabled { opacity: .5; cursor: default; }
+.stockfish-analysis button:hover:not(:disabled) { border-color: #a9d2ad; }
+.sf-position-result { display: flex; gap: 14px; margin: 14px 0 20px; }
+.sf-evaluation-bar { position: relative; flex: 0 0 28px; min-height: 142px; background: #171a20; border: 1px solid #767d89; border-radius: 4px; overflow: hidden; }
+.sf-white-fill { position: absolute; bottom: 0; width: 100%; background: #eeeae1; transition: height .2s; }
+.sf-unmeasured { background: repeating-linear-gradient(135deg, #343944, #343944 5px, #262b34 5px, #262b34 10px); }
+.sf-bar-w, .sf-bar-b { position: absolute; font-size: 10px; font-weight: 700; text-shadow: 0 0 3px #000; color: #fff; left: 8px; }
+.sf-bar-w { bottom: 5px; }.sf-bar-b { top: 5px; }
+.sf-result-text { min-width: 0; overflow-wrap: anywhere; }
+.sf-result-text p { margin: 4px 0; color: var(--text-secondary, #a9adb5); }
+.sf-evaluation-value { font-size: 22px; font-variant-numeric: tabular-nums; color: var(--text-primary, #e1e5eb); }
+.sf-principal-variation { line-height: 1.6; }
+.sf-analysis-error, .sf-result-text .sf-analysis-error { color: #ffaaa6; }
+.sf-analysis-status { font-style: italic; }
+.sf-evaluation-graph { width: 100%; height: auto; display: block; margin-top: 10px; background: rgba(0,0,0,.1); border-radius: 4px; }
+.sf-evaluation-graph text { fill: var(--text-secondary, #a9adb5); font-size: 11px; }
+.sf-graph-zero { stroke: #687281; stroke-dasharray: 4 4; }
+.sf-graph-line { stroke: #a9d2ad; stroke-width: 2; }
+.sf-graph-selection { stroke: #c3a77a; stroke-dasharray: 3 4; }
+.sf-graph-point { fill: #a9d2ad; stroke: #252b32; stroke-width: 1.5; }
+.sf-graph-point[role=button] { cursor: pointer; }
+.sf-point-unmeasured { fill: #292e38; stroke: #a9adb5; }
+.sf-point-selected { stroke: #edcd95; stroke-width: 2; }
+.sf-graph-point:focus { outline: none; stroke: #fff; stroke-width: 3; }
+.sf-game-actions { margin-top: 12px; }
+.sf-game-actions span { color: var(--text-secondary, #a9adb5); }
+.sf-analysis-footer { font-size: 10px; margin-bottom: 0; }
+.sf-analysis-footer a { color: #a9d2ad; text-decoration: underline; }
+@media (prefers-reduced-motion: reduce) { .sf-white-fill { transition: none; } }
+@media (max-width: 500px) { .stockfish-analysis { padding: 12px; } .sf-analysis-controls { gap: 8px; } }

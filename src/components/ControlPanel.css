@@ -1,0 +1,130 @@
+.control-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.controls-section {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 1px solid var(--border-color, #3a3f4b);
+}
+
+.btn {
+    background: transparent;
+    border: 1px solid var(--border-color, #3a3f4b);
+    color: var(--text-secondary, #969696);
+    padding: 10px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.85rem;
+}
+
+.btn:hover:not(:disabled) {
+    background-color: var(--border-color, #3a3f4b);
+    color: var(--text-primary, #dcdcdc);
+}
+
+.btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background-color: var(--accent-color, #4caf50);
+    border-color: var(--accent-color, #4caf50);
+    color: #000;
+    font-weight: 500;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--accent-hover, #45a049);
+    border-color: var(--accent-hover, #45a049);
+}
+
+.settings-section {
+    padding: 14px;
+}
+
+.section-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-secondary, #969696);
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.setting-row {
+    margin-bottom: 14px;
+}
+
+.setting-row label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-primary, #dcdcdc);
+    margin-bottom: 6px;
+}
+
+.setting-row select {
+    width: 100%;
+    background-color: var(--bg-color, #282c34);
+    border: 1px solid var(--border-color, #3a3f4b);
+    color: var(--text-primary, #dcdcdc);
+    padding: 8px 10px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+}
+
+.setting-row select:focus {
+    outline: none;
+    border-color: var(--accent-color, #4caf50);
+}
+
+.setting-row input[type="range"] {
+    width: 100%;
+    accent-color: var(--accent-color, #4caf50);
+}
+
+.temp-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: var(--text-secondary, #969696);
+    margin-top: 4px;
+}
+
+.setting-row.checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.setting-row.checkbox input[type="checkbox"] {
+    accent-color: var(--accent-color, #4caf50);
+    width: 15px;
+    height: 15px;
+}
+
+/* Resign button - subtle styling */
+.btn-resign {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    color: #888;
+    border-color: #555;
+}
+
+.btn-resign:hover:not(:disabled) {
+    color: #c44;
+    border-color: #c44;
+    background: transparent;
+}

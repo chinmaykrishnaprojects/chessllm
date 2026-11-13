@@ -1,0 +1,63 @@
+.settings-view {
+    padding: 24px 32px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.settings-view h2 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    color: var(--text-primary, #dcdcdc);
+}
+
+.settings-section {
+    background: var(--sidebar-bg, #1a1d24);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+}
+
+.settings-section h3 {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #969696);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color, #3a3f4b);
+}
+
+.setting-item {
+    padding: 8px 0;
+}
+
+.setting-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.setting-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: var(--accent-color, #4caf50);
+    cursor: pointer;
+}
+
+.setting-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.setting-text strong {
+    color: var(--text-primary, #dcdcdc);
+    font-weight: 500;
+}
+
+.setting-text small {
+    color: var(--text-secondary, #969696);
+    font-size: 0.85rem;
+}

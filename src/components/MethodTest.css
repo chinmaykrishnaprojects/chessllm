@@ -1,0 +1,143 @@
+.method-test-page {
+    min-height: 100vh;
+    background: var(--bg-primary, #0f0f0f);
+    color: var(--text-primary, #fff);
+    padding: 20px;
+}
+
+.method-test-page h1 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: var(--accent-color, #4caf50);
+}
+
+.test-controls {
+    max-width: 800px;
+    margin: 0 auto 24px;
+}
+
+.fen-input {
+    width: 100%;
+    padding: 12px;
+    background: var(--bg-secondary, #1a1a1a);
+    border: 1px solid var(--border-color, #3a3f4b);
+    border-radius: 6px;
+    color: var(--text-primary, #fff);
+    font-family: monospace;
+    margin-bottom: 12px;
+}
+
+.btn-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn-row button {
+    padding: 12px 24px;
+    background: var(--accent-color, #4caf50);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-row button:hover {
+    background: #5cbf60;
+}
+
+.btn-row button:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
+
+.methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.method-card {
+    background: var(--bg-secondary, #1a1a1a);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid var(--border-color, #3a3f4b);
+}
+
+.method-card h3 {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    color: var(--text-secondary, #969696);
+}
+
+.method-stats {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.method-stats .stat {
+    background: var(--bg-tertiary, #2a2a2a);
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-color, #4caf50);
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary, #969696);
+}
+
+.probs-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.prob-bar {
+    margin-bottom: 8px;
+}
+
+.prob-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+}
+
+.prob-move {
+    font-weight: 500;
+}
+
+.prob-value {
+    color: var(--text-secondary, #969696);
+}
+
+.prob-track {
+    height: 6px;
+    background: var(--bg-tertiary, #2a2a2a);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.prob-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color, #4caf50), #81c784);
+    border-radius: 3px;
+}
+
+.no-data {
+    color: var(--text-secondary, #969696);
+    text-align: center;
+    padding: 40px;
+}

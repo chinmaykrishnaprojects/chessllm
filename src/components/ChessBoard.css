@@ -1,0 +1,284 @@
+/* Lichess-inspired chess board - matching pygame theme */
+
+.chess-board-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+}
+
+.chess-board {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    aspect-ratio: 1;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow:
+        0 0 0 3px #27272a,
+        0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.square {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: filter 0.15s;
+}
+
+/* Lichess exact colors */
+.square.light {
+    background-color: #f0d9b5;
+    /* Lichess light square */
+}
+
+.square.dark {
+    background-color: #b58863;
+    /* Lichess dark square */
+}
+
+.square:hover {
+    filter: brightness(1.05);
+}
+
+.square.selected {
+    background-color: #829769 !important;
+}
+
+.square.last-move.light {
+    background-color: #cdd26a;
+    /* Lichess last move light */
+}
+
+.square.last-move.dark {
+    background-color: #aaa23a;
+    /* Lichess last move dark */
+}
+
+/* Coordinates */
+.coord {
+    position: absolute;
+    font-size: 11px;
+    font-weight: 600;
+    pointer-events: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.coord.rank {
+    top: 3px;
+    left: 4px;
+}
+
+.coord.file {
+    bottom: 2px;
+    right: 4px;
+}
+
+.square.light .coord {
+    color: #b58863;
+}
+
+.square.dark .coord {
+    color: #f0d9b5;
+}
+
+/* Piece styling */
+.piece {
+    width: 85%;
+    height: 85%;
+    pointer-events: none;
+    filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.25));
+}
+
+.piece svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Legal move indicators - Lichess style dots */
+.legal-move-marker {
+    position: absolute;
+    width: 32%;
+    height: 32%;
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.legal-move-marker.capture {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 0;
+    border: 8px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+}
+
+/* Promotion modal */
+.promotion-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    border-radius: 4px;
+}
+
+.promotion-modal {
+    display: flex;
+    gap: 8px;
+    background-color: #312e2b;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.promotion-piece {
+    width: 64px;
+    height: 64px;
+    background-color: #524d47;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 8px;
+    transition: background-color 0.15s, transform 0.1s;
+}
+
+.promotion-piece:hover {
+    background-color: #6b6561;
+    transform: scale(1.05);
+}
+
+.promotion-piece svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Check indicator - subtle red border like Lichess */
+.square.in-check {
+    box-shadow: inset 0 0 0 3px rgba(255, 0, 0, 0.9);
+}
+
+/* Board Themes */
+/* Green theme (default - Lichess style) */
+.theme-green .square.light {
+    background-color: #f0d9b5;
+}
+
+.theme-green .square.dark {
+    background-color: #b58863;
+}
+
+.theme-green .square.selected {
+    background-color: #829769 !important;
+}
+
+.theme-green .square.last-move.light {
+    background-color: #cdd26a;
+}
+
+.theme-green .square.last-move.dark {
+    background-color: #aaa23a;
+}
+
+.theme-green .square.light .coord {
+    color: #b58863;
+}
+
+.theme-green .square.dark .coord {
+    color: #f0d9b5;
+}
+
+/* Brown theme (classic wood) */
+.theme-brown .square.light {
+    background-color: #f0d0a0;
+}
+
+.theme-brown .square.dark {
+    background-color: #8b5a2b;
+}
+
+.theme-brown .square.selected {
+    background-color: #c4a35a !important;
+}
+
+.theme-brown .square.last-move.light {
+    background-color: #dcc38a;
+}
+
+.theme-brown .square.last-move.dark {
+    background-color: #7a4f28;
+}
+
+.theme-brown .square.light .coord {
+    color: #8b5a2b;
+}
+
+.theme-brown .square.dark .coord {
+    color: #f0d0a0;
+}
+
+/* Blue theme (icy) */
+.theme-blue .square.light {
+    background-color: #dee3e6;
+}
+
+.theme-blue .square.dark {
+    background-color: #8ca2ad;
+}
+
+.theme-blue .square.selected {
+    background-color: #5d9bb8 !important;
+}
+
+.theme-blue .square.last-move.light {
+    background-color: #9bc4e2;
+}
+
+.theme-blue .square.last-move.dark {
+    background-color: #6a9ab8;
+}
+
+.theme-blue .square.light .coord {
+    color: #8ca2ad;
+}
+
+.theme-blue .square.dark .coord {
+    color: #dee3e6;
+}
+
+/* Purple theme (royal) */
+.theme-purple .square.light {
+    background-color: #e8d2f0;
+}
+
+.theme-purple .square.dark {
+    background-color: #9d7ab3;
+}
+
+.theme-purple .square.selected {
+    background-color: #7a5a9e !important;
+}
+
+.theme-purple .square.last-move.light {
+    background-color: #c9a8e0;
+}
+
+.theme-purple .square.last-move.dark {
+    background-color: #8565a0;
+}
+
+.theme-purple .square.light .coord {
+    color: #9d7ab3;
+}
+
+.theme-purple .square.dark .coord {
+    color: #e8d2f0;
+}

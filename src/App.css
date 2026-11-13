@@ -1,0 +1,307 @@
+/* Chess LLM - Clean dark theme matching pygame app */
+
+:root {
+  /* Pygame theme colors */
+  --bg-color: #282c34;
+  /* Background */
+  --panel-bg: #1e222a;
+  /* Panel background */
+  --border-color: #3a3f4b;
+  /* Borders */
+  --text-primary: #dcdcdc;
+  /* Primary text */
+  --text-secondary: #969696;
+  /* Secondary text */
+  --accent-color: #4caf50;
+  /* Green accent (prob bars) */
+  --accent-hover: #45a049;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header - Clean and minimal */
+.header {
+  height: 56px;
+  background-color: var(--panel-bg);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.logo-icon {
+  font-size: 1.3rem;
+}
+
+.accent {
+  color: var(--accent-color);
+}
+
+.header-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.header-controls .btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.header-controls .btn:hover {
+  background-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.header-controls .btn.btn-active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #000;
+}
+
+/* Main layout */
+.main-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Left sidebar */
+.sidebar {
+  width: 260px;
+  background-color: var(--panel-bg);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: calc(100vh - 56px);
+  /* Account for top nav */
+}
+
+/* Center board section */
+.board-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: var(--bg-color);
+  gap: 12px;
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 560px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding: 8px 4px;
+  position: relative;
+}
+
+.player-info.top {
+  justify-content: flex-start;
+}
+
+.player-info.bottom {
+  justify-content: flex-start;
+}
+
+.status.thinking {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.thinking-text {
+  position: absolute;
+  right: 4px;
+  color: var(--accent-color);
+  font-size: 0.8rem;
+}
+
+/* FEN/PGN boxes - Compact */
+.fen-pgn {
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.fen-box,
+.pgn-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--panel-bg);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.fen-box label,
+.pgn-box label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  min-width: 32px;
+}
+
+.fen-box input,
+.pgn-box textarea {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: 'Consolas', monospace;
+  font-size: 0.8rem;
+  outline: none;
+}
+
+.pgn-box textarea {
+  resize: none;
+  height: 36px;
+}
+
+.fen-box button,
+.pgn-box button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.fen-box button:hover,
+.pgn-box button:hover {
+  opacity: 1;
+}
+
+/* Right analysis panel */
+.analysis-panel {
+  width: 260px;
+  background-color: var(--panel-bg);
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 56px);
+  overflow-y: auto;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+
+  .sidebar,
+  .analysis-panel {
+    width: 220px;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+  }
+
+  .sidebar,
+  .analysis-panel {
+    width: 100%;
+    max-height: 250px;
+  }
+
+  .board-section {
+    order: -1;
+    padding: 16px;
+  }
+}
+
+/* Viewing history overlay */
+.viewing-overlay {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.btn-primary {
+  background: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+/* Three-column desktop layout with a fixed-aspect chessboard. */
+.main-container { width: 100%; min-width: 0; align-items: stretch; overflow: visible; }
+.sidebar { width: auto; min-width: 0; flex: 0 0 clamp(285px, 23vw, 348px); }
+.board-section { min-width: 0; flex: 1 1 560px; }
+.analysis-panel { width: auto; min-width: 0; flex: 0 0 clamp(295px, 25vw, 360px); }
+.board-section .fen-pgn input, .board-section .fen-pgn textarea { min-width: 0; }
+.import-pgn-trigger { margin: 10px 14px; padding: 10px 12px; border: 1px solid var(--border-color); border-radius: 6px; background: #343a43; color: var(--text-primary); cursor: pointer; }
+.import-pgn-trigger:hover { border-color: var(--accent-color); }
+.app-error { position: fixed; z-index: 100; left: 50%; bottom: 20px; width: min(560px, calc(100% - 24px)); transform: translateX(-50%); display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; background: #452e2e; border: 1px solid #bc7777; border-radius: 8px; box-shadow: 0 6px 20px #0008; }
+.app-error button { color: inherit; background: transparent; border: 0; font-size: 1.3rem; cursor: pointer; }
+@media (max-width: 1100px) and (min-width: 901px) {
+  .sidebar, .analysis-panel { flex-basis: 245px; }
+}
+@media (max-width: 900px) {
+  .main-container { flex-direction: column; overflow: visible; }
+  .sidebar, .analysis-panel { width: 100%; flex: none; max-height: none; overflow: visible; }
+  .board-section { order: -1; flex: none; padding: 16px 12px; }
+}
