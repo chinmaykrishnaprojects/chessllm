@@ -70,6 +70,10 @@ export default function TopNav({ currentMode, onModeChange, analysisOn, onAnalys
                         <span className="tab-label">{mode.label}</span>
                     </button>
                 ))}
+                <a className="nav-tab" href="/coach/" title="Review a game with Queen">
+                    <span className="tab-icon">♛</span>
+                    <span className="tab-label">Coach</span>
+                </a>
             </div>
 
             <div className="nav-actions">

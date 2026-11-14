@@ -2,12 +2,15 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
+  "functions": { "api/lichess-games.js": { "maxDuration": 30 } },
   "headers": [
     { "source": "/models/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
     { "source": "/models/manifest.json", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
     { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
     { "source": "/sw.js", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
+    { "source": "/coach/", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] },
+    { "source": "/coach/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
     { "source": "/", "headers": [{ "key": "Cache-Control", "value": "no-cache" }] }
   ],
-  "rewrites": [{ "source": "/test", "destination": "/index.html" }]
+  "rewrites": [{ "source": "/test", "destination": "/index.html" }, { "source": "/coach", "destination": "/coach/index.html" }]
 }

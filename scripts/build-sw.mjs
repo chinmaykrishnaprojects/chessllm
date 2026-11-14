@@ -1,7 +1,8 @@
 import fs from 'node:fs'
 import crypto from 'node:crypto'
 const assets = fs.readdirSync('dist/assets').filter(name => /\.(js|mjs|css|wasm)$/.test(name)).map(name => `/assets/${name}`)
-const shell = ['/', '/favicon.svg', '/models/manifest.json', '/stockfish/stockfish.js', ...assets]
+const coachAssets = fs.existsSync('dist/coach/assets') ? fs.readdirSync('dist/coach/assets').filter(name => /\.(js|mjs|css|wasm)$/.test(name)).map(name => `/coach/assets/${name}`) : []
+const shell = ['/', '/favicon.svg', '/models/manifest.json', '/stockfish/stockfish.js', '/coach/', '/coach/stockfish/stockfish.js', ...assets, ...coachAssets]
 const template = fs.readFileSync('scripts/sw-template.js', 'utf8')
 const version = crypto.createHash('sha256').update(fs.readFileSync('dist/index.html'))
   .update(fs.readFileSync('dist/models/manifest.json')).update(fs.readFileSync('dist/stockfish/stockfish.js'))

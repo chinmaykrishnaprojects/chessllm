@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && node scripts/build-sw.mjs",
+    "build": "tsc -b && vite build && npm run build:coach && node scripts/build-sw.mjs",
+    "build:coach": "tsc --noEmit -p coach/tsconfig.json && vite build --config coach/vite.config.ts",
     "lint": "eslint .",
-    "test": "vitest run",
+    "test": "vitest run --exclude coach/** --exclude tests/**",
+    "test:api": "node --test tests/lichess-games.test.js",
+    "test:coach": "vitest run --root coach",
     "preview": "vite preview"
   },
   "dependencies": {

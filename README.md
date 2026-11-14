@@ -2,6 +2,13 @@
 
 [Website](https://chessllmweb.vercel.app)
 
+[Game coach](https://chessllmweb.vercel.app/coach/) — paste a PGN, review important
+decisions, and ask Queen about a position or its explanation. Public Lichess
+imports keep bullet, blitz, rapid and classical samples separate. Local move
+analysis stays on your device; optional Queen replies send the chosen position,
+move history and question to the public Hugging Face service. Queen requires an
+internet connection and the hosted service's availability. See [coach details](coach/README.md).
+
 A browser chess playground for character-level ChessGPT models. Play against
 the Stockfish-trained or Lichess-trained model, inspect legal-move
 probabilities, and compare positions with a separate Stockfish engine.

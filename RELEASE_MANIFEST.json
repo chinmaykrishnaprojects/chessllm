@@ -18,13 +18,143 @@
     },
     {
       "file": "README.md",
-      "bytes": 2647,
-      "sha256": "892ca633c973cfbbeb790193960d1ab00950432f314b00ce2216cd4a35556dd0"
+      "bytes": 3145,
+      "sha256": "54a833b713189af2373c5ca497446f59f035852905f0d6029b636e9d8d42a8c0"
     },
     {
       "file": "THIRD_PARTY_NOTICES.md",
       "bytes": 320,
       "sha256": "419eb0bcc4411717df6a32fe4befdbcf03a3cb0ff533be5ac0ba8434da1bad1f"
+    },
+    {
+      "file": "api/lichess-games.js",
+      "bytes": 4843,
+      "sha256": "af880691ebdebf8e2e9efc2b109ef0f40989b9cc178f86a4d26129c10f6d5d13"
+    },
+    {
+      "file": "coach/README.md",
+      "bytes": 1670,
+      "sha256": "1a140fdd10dcbdfad319e32a04a40c48f80e9cd3be234621134b3ddbb7b0acb3"
+    },
+    {
+      "file": "coach/index.html",
+      "bytes": 779,
+      "sha256": "6d8d0ec07d64108291b62b5864ca6a6b3b089c8bf1f09753f747fd88426380be"
+    },
+    {
+      "file": "coach/public/stockfish/COPYING.txt",
+      "bytes": 35821,
+      "sha256": "0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b"
+    },
+    {
+      "file": "coach/public/stockfish/SOURCE.md",
+      "bytes": 2219,
+      "sha256": "4e4730be0467729a1fd418bc8c77d9bc17de8bc7bb521444cd301c03dfbc3a0f"
+    },
+    {
+      "file": "coach/public/stockfish/stockfish-source-e105072e84cf8ee5dd5219e2c5be29c3b8bf8a5a.tar.gz",
+      "bytes": 192974,
+      "sha256": "c387792121aec4732a22d2c847e07fe1ab899e02e2f37b071b8c9af3fe3d15c1"
+    },
+    {
+      "file": "coach/public/stockfish/stockfish.js",
+      "bytes": 1579948,
+      "sha256": "723fda70117bfa8d5053a7bc4ae50cdc96dc9e3fd41b57627e4dfa0a0025957a"
+    },
+    {
+      "file": "coach/src/App.tsx",
+      "bytes": 23487,
+      "sha256": "fab707fdeb7315abb20bf651a096e7ebddb94d70ee73a61d374613f06d3bb4a9"
+    },
+    {
+      "file": "coach/src/coachPrompt.test.ts",
+      "bytes": 1571,
+      "sha256": "630ba12f759c4ee8f2fec847f89ba021806de2bee3e0c55ba749c2d8fe4e4372"
+    },
+    {
+      "file": "coach/src/coachPrompt.ts",
+      "bytes": 2872,
+      "sha256": "473ad0f816663c3dbd01e63d67beaa0421310cd24f92f460ebc9d6d64b79d3dd"
+    },
+    {
+      "file": "coach/src/game.test.ts",
+      "bytes": 9868,
+      "sha256": "665dda1c2787dfc001662bc27d3233839fab94837ccf8c1f7bffaee19fe46b21"
+    },
+    {
+      "file": "coach/src/game.ts",
+      "bytes": 7131,
+      "sha256": "051d4da5b9655d7ab233ea6c3fdfd558fe789ec63b8e08f6b117153650c18e6b"
+    },
+    {
+      "file": "coach/src/leverage.test.ts",
+      "bytes": 2047,
+      "sha256": "8665ba1f8a66691a85258a9885969f3b4bbd369b650448a91b4378ba4a8743f4"
+    },
+    {
+      "file": "coach/src/leverage.ts",
+      "bytes": 2480,
+      "sha256": "76be0493aca0cc75770b22f2a10b0a5bcd03275bfdb5f9fbe35b27825a2695e6"
+    },
+    {
+      "file": "coach/src/lib/chess.ts",
+      "bytes": 2998,
+      "sha256": "8fb76d6250a0483dbe4be27baedb10ad05b99d5264e3c723f648ebf0045c9e7d"
+    },
+    {
+      "file": "coach/src/lib/queen.ts",
+      "bytes": 2329,
+      "sha256": "d9b4f061d4e03a862980364973600e9c38924ab5d677c4a5bd05df95e5c43b85"
+    },
+    {
+      "file": "coach/src/lib/stockfishUci.ts",
+      "bytes": 15507,
+      "sha256": "f69924b587e40027e48c6832beebb439ee7ce82f81173de10cdb0fa3d2bafc41"
+    },
+    {
+      "file": "coach/src/lichess.test.ts",
+      "bytes": 8769,
+      "sha256": "635790505bd8aa78651abbfd01c57310dc297f5015dd061cce970c26c0d6493a"
+    },
+    {
+      "file": "coach/src/lichess.ts",
+      "bytes": 20918,
+      "sha256": "952a6c4eb803d6590ddbadfbb1c4094c8ca7c724ec3445af7603930c683744bb"
+    },
+    {
+      "file": "coach/src/main.tsx",
+      "bytes": 154,
+      "sha256": "c2e407303a7b23f69c4c62bae669686764391d8afec1a529fa64b12f8f17f086"
+    },
+    {
+      "file": "coach/src/multiPv.test.ts",
+      "bytes": 3210,
+      "sha256": "546d348fdd5699424b599dbfe63de9cfa7302ab8db069572b0d8e9a73a47125c"
+    },
+    {
+      "file": "coach/src/multiPv.ts",
+      "bytes": 11922,
+      "sha256": "0138259fefe7d84defbfde668d9b7d813efc6b0c09b458fdd77bfa86aee1a8dc"
+    },
+    {
+      "file": "coach/src/queenTransport.ts",
+      "bytes": 15321,
+      "sha256": "db058aef561bb91673da05fe504331e8708e8bb7872778c304c72301f289cfa8"
+    },
+    {
+      "file": "coach/src/styles.css",
+      "bytes": 7861,
+      "sha256": "728756fa9ad7c31ae1cffa5f9f5aba105b15596145534b0586b4299f14436cca"
+    },
+    {
+      "file": "coach/tsconfig.json",
+      "bytes": 342,
+      "sha256": "a0523938b3b0a96fea80a62ba4b52fcbbf9d3bfb7ae9e2c704e38c5172f7b1a9"
+    },
+    {
+      "file": "coach/vite.config.ts",
+      "bytes": 241,
+      "sha256": "b417e7322e2ab2a43872cd47d511d83be1f3223ba18851957614327209a3444d"
     },
     {
       "file": "eslint.config.js",
@@ -43,8 +173,8 @@
     },
     {
       "file": "package.json",
-      "bytes": 895,
-      "sha256": "687504eb8650560f7e7f4da10cc2f181be9f8838c3451a6a825f711d8a036042"
+      "bytes": 1162,
+      "sha256": "5682bf66b5d5b2817ead5af58b4e78b78b091d6bb41c1504ada64d0a6675ca86"
     },
     {
       "file": "public/THIRD_PARTY_NOTICES.md",
@@ -298,8 +428,8 @@
     },
     {
       "file": "scripts/build-sw.mjs",
-      "bytes": 828,
-      "sha256": "e4440d3dc6680078701daff96d135b2be56dbb9398d76e5ddc761cc4b521b6b8"
+      "bytes": 1073,
+      "sha256": "e6d46ee8121ab1e690074715d58a3a3ddcf7b398a85156b491556a8d78be9016"
     },
     {
       "file": "scripts/release_allowlist.json",
@@ -313,8 +443,8 @@
     },
     {
       "file": "scripts/sw-template.js",
-      "bytes": 2158,
-      "sha256": "d90b130908a58e51dce3e8aae80df8fc3eb97d71fb4284c07cafed9945a7dac3"
+      "bytes": 2208,
+      "sha256": "a32ce317ea57eaa7d6fe30b62a52549dd2fefc8f8225d216ad8858baccab7011"
     },
     {
       "file": "src/App.css",
@@ -443,13 +573,13 @@
     },
     {
       "file": "src/components/TopNav.css",
-      "bytes": 6759,
-      "sha256": "00dd9c62171a5b06145197f8d3aa96ce4b3252b19a7a9f89413111c7bdcd1bac"
+      "bytes": 6787,
+      "sha256": "8105701278ccc86c7675dad3b624b23a0fb3f54dd7ed70c9953187718c4c1165"
     },
     {
       "file": "src/components/TopNav.tsx",
-      "bytes": 12398,
-      "sha256": "ce8b6bffef9d3a2021c0468bb2c7dd0c084f499a154ce44b333ea47b55585147"
+      "bytes": 12630,
+      "sha256": "c36d9027f94776d923ccfd07eee0ce931662c74c2f611908f455ac9fdb34fb53"
     },
     {
       "file": "src/components/TournamentView.css",
@@ -552,6 +682,11 @@
       "sha256": "6cbc29e654a5fea348f05b5bdba0c3e2ad5f8d3064564cecce3c78a293fc5c60"
     },
     {
+      "file": "tests/lichess-games.test.js",
+      "bytes": 7253,
+      "sha256": "57bdf3112fc46b8cb5ba69be5046eea2df2083e716eab0510984d82d929c19a8"
+    },
+    {
       "file": "tsconfig.app.json",
       "bytes": 760,
       "sha256": "185c585aa92b2cbe0df1918e999d9a6bc4fec6762a6d80de7d2d155d56369aed"
@@ -568,8 +703,8 @@
     },
     {
       "file": "vercel.json",
-      "bytes": 704,
-      "sha256": "accb4f31aef7e458a31c69221800b6d68fbc68d985b8b9cb6646dcae3cfdd272"
+      "bytes": 1050,
+      "sha256": "6aa261c7f9ef9475c81afaa352c7fa006a819047fc5d6140b34f93437f0a76aa"
     },
     {
       "file": "vite.config.ts",

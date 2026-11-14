@@ -20,7 +20,7 @@ self.addEventListener('fetch', event => {
   if (request.mode === 'navigate' || url.pathname.endsWith('/manifest.json')) {
     event.respondWith((async () => {
       const cache = await caches.open(UI_CACHE)
-      const key = request.mode === 'navigate' ? '/' : request
+      const key = request.mode === 'navigate' ? (url.pathname.startsWith('/coach') ? '/coach/' : '/') : request
       try {
         const response = await fetch(request)
         // Shell updates activate atomically via a new SW, not per-navigation.
