@@ -113,13 +113,13 @@
     },
     {
       "file": "coach/src/lichess.test.ts",
-      "bytes": 8769,
-      "sha256": "635790505bd8aa78651abbfd01c57310dc297f5015dd061cce970c26c0d6493a"
+      "bytes": 8941,
+      "sha256": "7a0e0730f4a3450acbb34f067971723a755707481bcee88b3e6fe0e9f45ff03a"
     },
     {
       "file": "coach/src/lichess.ts",
-      "bytes": 20918,
-      "sha256": "952a6c4eb803d6590ddbadfbb1c4094c8ca7c724ec3445af7603930c683744bb"
+      "bytes": 20953,
+      "sha256": "9229407fffb18d1c8d028b7bf6fb8be9fa74bf24c486f04b07662b272457c913"
     },
     {
       "file": "coach/src/main.tsx",

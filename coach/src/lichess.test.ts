@@ -130,12 +130,15 @@ describe('public Lichess import and observed opening analysis', () => {
   })
   it('uses only the fixed same-origin proxy while retaining public source provenance', async () => {
     const requests: string[] = []
-    vi.stubGlobal('fetch', async (url: string) => {
+    const credentials: (RequestCredentials | undefined)[] = []
+    vi.stubGlobal('fetch', async (url: string, init: RequestInit) => {
       requests.push(url)
+      credentials.push(init.credentials)
       return new Response(JSON.stringify(fixture()) + '\n')
     })
     const result = await fetchLatestLichessGames('sampleplayer', { speeds: ['bullet'], maxPerSpeed: 1, useProxy: true })
     expect(requests).toEqual(['/api/lichess-games?username=sampleplayer&speed=bullet&max=1'])
+    expect(credentials).toEqual(['same-origin'])
     expect(result.sourceUrls[0]).toMatch(/^https:\/\/lichess\.org\/api\/games\/user\/sampleplayer\?/)
   })
 })

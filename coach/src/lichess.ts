@@ -211,7 +211,7 @@ export async function fetchLatestLichessGames(username = 'sampleplayer', options
     const query = new URLSearchParams({ max: String(max), perfType: speed, ongoing: 'false', moves: 'true', clocks: 'true', evals: 'true', opening: 'true', pgnInJson: 'true' })
     const url = `https://lichess.org/api/games/user/${encodeURIComponent(user)}?${query}`
     const requestUrl = options.useProxy ? `/api/lichess-games?${new URLSearchParams({ username: user, speed, max: String(max) })}` : url
-    const response = await fetch(requestUrl, { headers: { Accept: 'application/x-ndjson' }, credentials: 'omit', mode: 'cors', signal: options.signal, referrerPolicy: 'no-referrer' })
+    const response = await fetch(requestUrl, { headers: { Accept: 'application/x-ndjson' }, credentials: options.useProxy ? 'same-origin' : 'omit', mode: 'cors', signal: options.signal, referrerPolicy: 'no-referrer' })
     if (!response.ok) throw new Error(response.status === 429 ? 'Lichess rate limit reached. Wait at least one minute; no retry was submitted.' : `Lichess export failed (HTTP ${response.status})`)
     if (!response.body) throw new Error('Lichess returned no NDJSON stream')
     const reader = response.body.getReader(), decoder = new TextDecoder()
